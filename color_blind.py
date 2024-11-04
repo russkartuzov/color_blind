@@ -1,8 +1,8 @@
+import pyautogui
+
 from colorama import Fore, Back, Style, init
 from math import sqrt
 from PIL import ImageGrab
-
-import pyautogui
 
 
 init(autoreset=True)
