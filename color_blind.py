@@ -1,12 +1,18 @@
-#TODO
-
+from colorama import Fore, Back, Style, init
 from math import sqrt
 from PIL import ImageGrab
 
 import pyautogui
 
-
+init(autoreset=True)
 color_distances = {}
+
+class CustomFore:
+    ORANGE = '\033[38;2;255;165;0m'
+    PINK = '\033[38;2;255;105;180m'
+    BROWN = '\033[38;2;165;42;42m'
+    BEIGE = '\033[38;2;245;245;220m'
+    GREY = '\033[38;2;128;128;128m'
 
 base_colors = {
     'Red' : (255, 0, 0),
@@ -16,6 +22,10 @@ base_colors = {
     'Cyan' : (0, 255, 255),
     'Magenta' : (255, 0, 255),
     'Orange' : (255, 165, 0),
+    'Pink' : (255, 105, 180),
+    'Brown' : (165, 42, 42),
+    'Beige' : (245, 245, 220),
+    'Grey' : (128, 128, 128),
     'Black' : (0, 0, 0),
     'White' : (255, 255, 255)
 }
@@ -58,4 +68,30 @@ while True:
     closest_color = find_shortest_dist(color_distances)
 
     closest_color_name = next(iter(closest_color))
-    print(closest_color_name)
+    if closest_color_name == 'Red':
+        print(Fore.RED + closest_color_name.upper())
+    elif closest_color_name == 'Green':
+        print(Fore.GREEN + closest_color_name.upper())
+    elif closest_color_name == 'Blue':
+        print(Fore.BLUE + closest_color_name.upper())
+    elif closest_color_name == 'Yellow':
+        print(Fore.YELLOW + closest_color_name.upper())
+    elif closest_color_name == 'Cyan':
+        print(Fore.CYAN + closest_color_name.upper())
+    elif closest_color_name == 'Magenta':
+        print(Fore.MAGENTA + closest_color_name.upper())
+    elif closest_color_name == 'Orange':
+        print(CustomFore.ORANGE + closest_color_name.upper())
+    elif closest_color_name == 'Pink':
+        print(CustomFore.PINK + closest_color_name.upper())
+    elif closest_color_name == 'Brown':
+        print(CustomFore.BROWN + closest_color_name.upper())
+    elif closest_color_name == 'Beige':
+        print(CustomFore.BEIGE + closest_color_name.upper())
+    elif closest_color_name == 'Grey':
+        print(CustomFore.GREY + closest_color_name.upper())
+    elif closest_color_name == 'Black':
+        print(Fore.BLACK + closest_color_name.upper())
+    elif closest_color_name == 'White':
+        print(Fore.WHITE + closest_color_name.upper())
+    
