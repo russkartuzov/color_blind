@@ -4,6 +4,7 @@ from PIL import ImageGrab
 
 import pyautogui
 
+
 init(autoreset=True)
 color_distances = {}
 
